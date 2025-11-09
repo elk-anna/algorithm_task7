@@ -1,0 +1,29 @@
+import java.util.*;
+import java.util.Scanner;
+
+public class Case7 {
+    public static void main(String[] args) {
+        ArrayList<String> usernames = new ArrayList<>(Arrays.asList("Anna", "Zero", "Helia", "Xavier", "Aden"));
+        ArrayList<String> passwords = new ArrayList<>  (Arrays.asList("342", "Sepeda", "807", "Motor", "126"));
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the username: ");
+        String user = sc.nextLine();
+        System.out.print("Enter the password: ");
+        String pass = sc.nextLine();
+
+        boolean valid = false;
+        for (int i = 0; i <usernames.size(); i++) {
+            if (usernames.get(i).equals(user) && passwords.get(i).equals(pass)) {
+               valid = true;
+               break; 
+            }
+        }
+        if (valid) {
+            System.out.println("Username and password valid, you can login into the dashboard");
+        }else{
+            System.out.println("Wrong username and password");
+        }
+         sc.close();
+    }
+}
