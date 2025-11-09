@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Case5 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int ItemPrice = 20000;
+
+        System.out.print("Enter the number of item : ");
+        int qty = input.nextInt();
+        int multiple10 = qty / 10;
+        int discount = multiple10 * 5;
+        if (discount > 50) discount = 50;
+
+        double pricetotal = qty * ItemPrice;
+        double totalAfterDiscount = pricetotal - (pricetotal * discount / 100);
+
+        System.out.println("Discount: "+ discount + "%");
+        System.out.println("price total before discount: " + pricetotal);
+        System.out.println("price total after discount: " + totalAfterDiscount);
+
+        input.close();
+    }
+}
